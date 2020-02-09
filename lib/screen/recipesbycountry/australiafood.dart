@@ -103,8 +103,8 @@ class _AustraliaCountryState extends State<AustraliaCountry> {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                    Colors.lightGreenAccent,
-                    Colors.redAccent,
+                    Colors.white,
+                    Colors.black54,
                   ])),
               child: ListView.builder(
                   itemCount: 1,
@@ -124,7 +124,6 @@ class _AustraliaCountryState extends State<AustraliaCountry> {
             ),
             Container(
               height: height * 0.8,
-              color: Colors.white,
               child: ListView.builder(
                 itemCount: australia.australiaRecipes.length,
                 itemBuilder: (ctx, i) => ChangeNotifierProvider.value(

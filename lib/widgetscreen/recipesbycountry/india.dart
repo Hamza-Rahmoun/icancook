@@ -1,20 +1,20 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
-import 'package:icancook/provider/recipesbycountry/australifood.dart';
+import 'package:icancook/provider/recipesbycountry/indiafood.dart';
 import 'package:provider/provider.dart';
 
 class IndiaWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final australia = Provider.of<AustraliaFood>(context);
+    final india = Provider.of<IndiaFood>(context);
     return Container(
       height: height * 0.3,
       child: GridTile(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: ExtendedImage.network(
-              australia.imageUrl,
+              india.imageUrl,
               fit: BoxFit.cover,
               width: double.infinity,
             ),
@@ -25,7 +25,7 @@ class IndiaWidget extends StatelessWidget {
               color: Colors.black54,
               child: ListTile(
                 title: Text(
-                  australia.title,
+                  india.title,
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,

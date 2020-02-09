@@ -2,6 +2,7 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:icancook/provider/recipesbycountry/australifood.dart';
 import 'package:icancook/provider/recipesbycountry/chinafood.dart';
+import 'package:icancook/provider/recipesbycountry/francefood.dart';
 import 'package:icancook/provider/recipesbycountry/italyfood.dart';
 import 'package:icancook/provider/recipesbycountry/moroccofood.dart';
 import 'package:icancook/widgetscreen/recipesbycountry/france.dart';
@@ -64,6 +65,8 @@ class _FranceCountryState extends State<FranceCountry> {
     final australia = Provider.of<Australia>(context);
     final china = Provider.of<China>(context);
     final italy = Provider.of<Italy>(context);
+    final france = Provider.of<France>(context);
+
     final height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
@@ -103,8 +106,8 @@ class _FranceCountryState extends State<FranceCountry> {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                    Colors.lightGreenAccent,
-                    Colors.redAccent,
+                    Colors.white,
+                    Colors.black54,
                   ])),
               child: ListView.builder(
                   itemCount: 1,
@@ -126,12 +129,11 @@ class _FranceCountryState extends State<FranceCountry> {
               height: height * 0.8,
               color: Colors.white,
               child: ListView.builder(
-                itemCount: australia.australiaRecipes.length,
+                itemCount: france.franceRecipes.length,
                 itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-                    value: australia.australiaRecipes[i],
+                    value: france.franceRecipes[i],
                     child: ChangeNotifierProvider.value(
-                        value: australia.australiaRecipes[i],
-                        child: FranceWidget())),
+                        value: france.franceRecipes[i], child: FranceWidget())),
               ),
             )
           ],

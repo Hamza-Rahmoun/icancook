@@ -4,6 +4,7 @@ import 'package:icancook/provider/recipesbycountry/australifood.dart';
 import 'package:icancook/provider/recipesbycountry/chinafood.dart';
 import 'package:icancook/provider/recipesbycountry/italyfood.dart';
 import 'package:icancook/provider/recipesbycountry/moroccofood.dart';
+import 'package:icancook/provider/recipesbycountry/thailandfood.dart';
 import 'package:icancook/widgetscreen/recipesbycountry/thailandfood.dart';
 import 'package:provider/provider.dart';
 
@@ -63,6 +64,8 @@ class _ThailandCountryState extends State<ThailandCountry> {
     final australia = Provider.of<Australia>(context);
     final china = Provider.of<China>(context);
     final italy = Provider.of<Italy>(context);
+    final thailand = Provider.of<Thailand>(context);
+
     final height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
@@ -102,8 +105,8 @@ class _ThailandCountryState extends State<ThailandCountry> {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                    Colors.lightGreenAccent,
-                    Colors.redAccent,
+                    Colors.white,
+                    Colors.black54,
                   ])),
               child: ListView.builder(
                   itemCount: 1,
@@ -125,11 +128,11 @@ class _ThailandCountryState extends State<ThailandCountry> {
               height: height * 0.8,
               color: Colors.white,
               child: ListView.builder(
-                itemCount: australia.australiaRecipes.length,
+                itemCount: thailand.thailandRecipes.length,
                 itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-                    value: australia.australiaRecipes[i],
+                    value: thailand.thailandRecipes[i],
                     child: ChangeNotifierProvider.value(
-                        value: australia.australiaRecipes[i],
+                        value: thailand.thailandRecipes[i],
                         child: ThailandWidget())),
               ),
             )

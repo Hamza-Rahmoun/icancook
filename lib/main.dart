@@ -10,6 +10,9 @@ import 'package:icancook/provider/recipesbycountry/japanfood.dart';
 import 'package:icancook/provider/recipesbycountry/portugale.dart';
 import 'package:icancook/provider/recipesbycountry/swedenfood.dart';
 import 'package:icancook/provider/recipesbycountry/thailandfood.dart';
+import 'package:icancook/screen/foodviewgrandir/australiafoodview.dart';
+import 'package:icancook/screen/foodviewgrandir/chinafoodview.dart';
+import 'package:icancook/screen/foodviewgrandir/japanfoodview.dart';
 import 'package:icancook/screen/recipesbycountry/australiafood.dart';
 import 'package:icancook/screen/recipesbycountry/chinafood.dart';
 import 'package:icancook/screen/recipesbycountry/francefood.dart';
@@ -69,6 +72,9 @@ class MyApp extends StatelessWidget {
           PortugalCountry.routeName: (ctx) => PortugalCountry(),
           SwedenCountry.routeName: (ctx) => SwedenCountry(),
           FranceCountry.routeName: (ctx) => FranceCountry(),
+          AustraliaFoodView.routeName: (ctx) => AustraliaFoodView(),
+          ChinaFoodView.routeName: (ctx) => ChinaFoodView(),
+          JapanFoodView.routeName: (ctx) => JapanFoodView(),
         },
       ),
     );

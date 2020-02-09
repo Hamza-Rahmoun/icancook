@@ -103,8 +103,8 @@ class _ItalyCountryState extends State<ItalyCountry> {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                    Colors.lightGreenAccent,
-                    Colors.redAccent,
+                    Colors.white,
+                    Colors.black54,
                   ])),
               child: ListView.builder(
                   itemCount: 1,

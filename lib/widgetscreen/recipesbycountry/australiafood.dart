@@ -13,10 +13,15 @@ class AustraliaWidget extends StatelessWidget {
       child: GridTile(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: ExtendedImage.network(
-              australia.imageUrl,
-              fit: BoxFit.cover,
-              width: double.infinity,
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  shape: BoxShape.rectangle),
+              child: ExtendedImage.network(
+                australia.imageUrl,
+                fit: BoxFit.cover,
+                width: double.infinity,
+              ),
             ),
           ),
           footer: Padding(

@@ -2,6 +2,7 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:icancook/provider/recipesbycountry/australifood.dart';
 import 'package:icancook/provider/recipesbycountry/chinafood.dart';
+import 'package:icancook/provider/recipesbycountry/indiafood.dart';
 import 'package:icancook/provider/recipesbycountry/italyfood.dart';
 import 'package:icancook/provider/recipesbycountry/moroccofood.dart';
 import 'package:icancook/widgetscreen/recipesbycountry/india.dart';
@@ -63,6 +64,8 @@ class _IndiaCountryState extends State<IndiaCountry> {
     final australia = Provider.of<Australia>(context);
     final china = Provider.of<China>(context);
     final italy = Provider.of<Italy>(context);
+    final india = Provider.of<India>(context);
+
     final height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
@@ -102,8 +105,8 @@ class _IndiaCountryState extends State<IndiaCountry> {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                    Colors.lightGreenAccent,
-                    Colors.redAccent,
+                    Colors.white,
+                    Colors.black54,
                   ])),
               child: ListView.builder(
                   itemCount: 1,
@@ -125,12 +128,11 @@ class _IndiaCountryState extends State<IndiaCountry> {
               height: height * 0.8,
               color: Colors.white,
               child: ListView.builder(
-                itemCount: australia.australiaRecipes.length,
+                itemCount: india.indiaRecipes.length,
                 itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-                    value: australia.australiaRecipes[i],
+                    value: india.indiaRecipes[i],
                     child: ChangeNotifierProvider.value(
-                        value: australia.australiaRecipes[i],
-                        child: IndiaWidget())),
+                        value: india.indiaRecipes[i], child: IndiaWidget())),
               ),
             )
           ],

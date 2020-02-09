@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:icancook/provider/recipesbycountry/australifood.dart';
 import 'package:icancook/provider/recipesbycountry/chinafood.dart';
 import 'package:icancook/provider/recipesbycountry/italyfood.dart';
+import 'package:icancook/provider/recipesbycountry/japanfood.dart';
 import 'package:icancook/provider/recipesbycountry/moroccofood.dart';
 import 'package:icancook/widgetscreen/recipesbycountry/japanfood.dart';
 import 'package:provider/provider.dart';
@@ -64,6 +65,8 @@ class _JapanCountryState extends State<JapanCountry> {
     final australia = Provider.of<Australia>(context);
     final china = Provider.of<China>(context);
     final italy = Provider.of<Italy>(context);
+    final japan = Provider.of<Japan>(context);
+
     final height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
@@ -103,8 +106,8 @@ class _JapanCountryState extends State<JapanCountry> {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                    Colors.lightGreenAccent,
-                    Colors.redAccent,
+                    Colors.white,
+                    Colors.black54,
                   ])),
               child: ListView.builder(
                   itemCount: 1,
@@ -126,12 +129,11 @@ class _JapanCountryState extends State<JapanCountry> {
               height: height * 0.8,
               color: Colors.white,
               child: ListView.builder(
-                itemCount: australia.australiaRecipes.length,
+                itemCount: japan.japanRecipes.length,
                 itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-                    value: australia.australiaRecipes[i],
+                    value: japan.japanRecipes[i],
                     child: ChangeNotifierProvider.value(
-                        value: australia.australiaRecipes[i],
-                        child: JapanWidget())),
+                        value: japan.japanRecipes[i], child: JapanWidget())),
               ),
             )
           ],

@@ -98,7 +98,14 @@ class _MoroccoCountryState extends State<MoroccoCountry> {
               ),
             ),
             Container(
-              color: Colors.grey,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                    Colors.white,
+                    Colors.black54,
+                  ])),
               height: height * 0.2,
               child: ListView.builder(
                   itemCount: 1,

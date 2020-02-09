@@ -4,6 +4,7 @@ import 'package:icancook/provider/recipesbycountry/australifood.dart';
 import 'package:icancook/provider/recipesbycountry/chinafood.dart';
 import 'package:icancook/provider/recipesbycountry/italyfood.dart';
 import 'package:icancook/provider/recipesbycountry/moroccofood.dart';
+import 'package:icancook/provider/recipesbycountry/swedenfood.dart';
 import 'package:icancook/widgetscreen/recipesbycountry/sweden.dart';
 import 'package:provider/provider.dart';
 
@@ -64,6 +65,8 @@ class _SwedenCountryState extends State<SwedenCountry> {
     final australia = Provider.of<Australia>(context);
     final china = Provider.of<China>(context);
     final italy = Provider.of<Italy>(context);
+    final sweden = Provider.of<Sweden>(context);
+
     final height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
@@ -103,8 +106,8 @@ class _SwedenCountryState extends State<SwedenCountry> {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                    Colors.lightGreenAccent,
-                    Colors.redAccent,
+                    Colors.white,
+                    Colors.black54,
                   ])),
               child: ListView.builder(
                   itemCount: 1,
@@ -126,12 +129,11 @@ class _SwedenCountryState extends State<SwedenCountry> {
               height: height * 0.8,
               color: Colors.white,
               child: ListView.builder(
-                itemCount: australia.australiaRecipes.length,
+                itemCount: sweden.swedenRecipes.length,
                 itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-                    value: australia.australiaRecipes[i],
+                    value: sweden.swedenRecipes[i],
                     child: ChangeNotifierProvider.value(
-                        value: australia.australiaRecipes[i],
-                        child: SwedenWidget())),
+                        value: sweden.swedenRecipes[i], child: SwedenWidget())),
               ),
             )
           ],

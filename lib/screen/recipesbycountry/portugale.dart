@@ -4,6 +4,7 @@ import 'package:icancook/provider/recipesbycountry/australifood.dart';
 import 'package:icancook/provider/recipesbycountry/chinafood.dart';
 import 'package:icancook/provider/recipesbycountry/italyfood.dart';
 import 'package:icancook/provider/recipesbycountry/moroccofood.dart';
+import 'package:icancook/provider/recipesbycountry/portugale.dart';
 import 'package:icancook/widgetscreen/recipesbycountry/portugalfood.dart';
 import 'package:provider/provider.dart';
 
@@ -64,6 +65,8 @@ class _PortugalCountryState extends State<PortugalCountry> {
     final australia = Provider.of<Australia>(context);
     final china = Provider.of<China>(context);
     final italy = Provider.of<Italy>(context);
+    final portugal = Provider.of<Portugal>(context);
+
     final height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
@@ -103,8 +106,8 @@ class _PortugalCountryState extends State<PortugalCountry> {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                    Colors.lightGreenAccent,
-                    Colors.redAccent,
+                    Colors.white,
+                    Colors.black54,
                   ])),
               child: ListView.builder(
                   itemCount: 1,
@@ -126,11 +129,11 @@ class _PortugalCountryState extends State<PortugalCountry> {
               height: height * 0.8,
               color: Colors.white,
               child: ListView.builder(
-                itemCount: australia.australiaRecipes.length,
+                itemCount: portugal.portugalRecipes.length,
                 itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-                    value: australia.australiaRecipes[i],
+                    value: portugal.portugalRecipes[i],
                     child: ChangeNotifierProvider.value(
-                        value: australia.australiaRecipes[i],
+                        value: portugal.portugalRecipes[i],
                         child: PortugalWidget())),
               ),
             )
